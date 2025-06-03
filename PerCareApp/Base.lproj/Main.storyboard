@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -154,6 +155,167 @@
             </objects>
             <point key="canvasLocation" x="2960" y="400"/>
         </scene>
+        <!--Pet Tasks View Controller-->
+        <scene sceneID="NBA-sU-2Wg">
+            <objects>
+                <viewController storyboardIdentifier="PetTasksViewController" id="NPV-eD-NYw" customClass="PetTasksViewController" customModule="PerCareApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZm-wh-0Ux">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-CH-IWD">
+                                <rect key="frame" x="16" y="127" width="361" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PetCell" rowHeight="154" id="fj8-S3-JOk" customClass="PetTableViewCell" customModule="PerCareApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fj8-S3-JOk" id="YM4-s1-51k">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="154"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-Dy-a7i">
+                                                    <rect key="frame" x="20" y="11" width="341" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-Si-OM8">
+                                                    <rect key="frame" x="20" y="43" width="341" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLg-QT-1vW">
+                                                    <rect key="frame" x="20" y="77" width="321" height="77"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GGc-Si-OM8" secondAttribute="trailing" id="9kp-Bj-fYJ"/>
+                                                <constraint firstItem="cLg-QT-1vW" firstAttribute="trailing" secondItem="YM4-s1-51k" secondAttribute="trailingMargin" id="9to-33-mJC"/>
+                                                <constraint firstItem="cLg-QT-1vW" firstAttribute="leading" secondItem="YM4-s1-51k" secondAttribute="leadingMargin" id="JkZ-tD-gBg"/>
+                                                <constraint firstItem="GGc-Si-OM8" firstAttribute="leading" secondItem="YM4-s1-51k" secondAttribute="leadingMargin" id="VNp-Nc-tFZ"/>
+                                                <constraint firstItem="GGc-Si-OM8" firstAttribute="top" secondItem="kuA-Dy-a7i" secondAttribute="bottom" constant="8" symbolic="YES" id="Zm4-Er-PU3"/>
+                                                <constraint firstItem="kuA-Dy-a7i" firstAttribute="leading" secondItem="YM4-s1-51k" secondAttribute="leadingMargin" id="bVr-0x-FN9"/>
+                                                <constraint firstItem="cLg-QT-1vW" firstAttribute="top" secondItem="GGc-Si-OM8" secondAttribute="bottom" constant="13" id="g0b-Lr-M6H"/>
+                                                <constraint firstAttribute="trailing" secondItem="kuA-Dy-a7i" secondAttribute="trailing" id="h4b-RT-Hdw"/>
+                                                <constraint firstItem="GGc-Si-OM8" firstAttribute="top" secondItem="kuA-Dy-a7i" secondAttribute="bottom" constant="8" symbolic="YES" id="tlQ-6b-qBF"/>
+                                                <constraint firstAttribute="bottom" secondItem="cLg-QT-1vW" secondAttribute="bottom" id="wgN-0C-zLY"/>
+                                                <constraint firstItem="kuA-Dy-a7i" firstAttribute="top" secondItem="YM4-s1-51k" secondAttribute="topMargin" id="zF8-DM-gpd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="cLg-QT-1vW" id="Ka4-2h-HnI"/>
+                                            <outlet property="nameLabel" destination="kuA-Dy-a7i" id="2eg-K8-PNS"/>
+                                            <outlet property="typeLabel" destination="GGc-Si-OM8" id="Vof-BL-X8H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7l-fV-Cxa">
+                                <rect key="frame" x="106" y="59" width="181" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus.app" catalog="system" title=" Добавить задачу">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addTaskTapped:" destination="NPV-eD-NYw" eventType="touchUpInside" id="YaR-yP-bDW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="19Z-fA-STf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="N6t-Sw-zra"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8M-yR-88z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3774.8091603053435" y="-1038.0281690140846"/>
+        </scene>
+        <!--Add Pet Task View Controller-->
+        <scene sceneID="XtV-c9-biD">
+            <objects>
+                <viewController storyboardIdentifier="AddPetTaskViewController" id="ryB-t0-yVK" customClass="AddPetTaskViewController" customModule="PerCareApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKI-8Z-azh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAJ-FD-Mi0">
+                                <rect key="frame" x="58" y="171" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9P-Cj-A7R">
+                                <rect key="frame" x="58" y="145" width="73" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-JA-A0Y">
+                                <rect key="frame" x="58" y="308" width="36" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Описание" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-Vi-0e1">
+                                <rect key="frame" x="58" y="252" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8a-bd-y4T">
+                                <rect key="frame" x="58" y="226" width="75" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавить задачу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32f-ce-woz">
+                                <rect key="frame" x="70" y="59" width="253" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fop-iu-abq">
+                                <rect key="frame" x="58" y="334" width="275" height="65"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-A2-gUc">
+                                <rect key="frame" x="147" y="416" width="96" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Добавить">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addPetTapped:" destination="QHD-qS-N7W" eventType="touchUpInside" id="Wsv-YH-lvc"/>
+                                    <action selector="addTaskTapped:" destination="ryB-t0-yVK" eventType="touchUpInside" id="Set-ca-ctQ"/>
+                                    <action selector="registerTapped:" destination="mhI-zU-J7I" eventType="touchUpInside" id="ae3-KY-tlk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OGH-sj-m9i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Fop-iu-abq" id="26G-Po-qbb"/>
+                        <outlet property="descriptionLabel" destination="YAO-Vi-0e1" id="bxW-db-g7o"/>
+                        <outlet property="titleLabel" destination="gAJ-FD-Mi0" id="RgP-14-4VC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="722-m4-NoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4891" y="-1038"/>
+        </scene>
         <!--Питомцы-->
         <scene sceneID="nsl-ce-dKz">
             <objects>
@@ -162,30 +324,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Питомцы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fF-6A-pr5">
-                                <rect key="frame" x="159" y="416" width="75" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gNB-Iy-tIw">
+                                <rect key="frame" x="16" y="161" width="361" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atR-53-iRb">
-                                <rect key="frame" x="100" y="118" width="193" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PetCell" rowHeight="154" id="3aM-JT-WYl" customClass="PetTableViewCell" customModule="PerCareApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3aM-JT-WYl" id="axe-E2-d4K">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="154"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-QR-EC8">
+                                                    <rect key="frame" x="20" y="11" width="310.66666666666669" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Тип" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-AS-GT2">
+                                                    <rect key="frame" x="20" y="43" width="247" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz1-PR-5b7">
+                                                    <rect key="frame" x="20" y="77" width="302.66666666666669" height="77"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Возраст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-ee-xcn">
+                                                    <rect key="frame" x="275" y="43" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Tz1-PR-5b7" firstAttribute="leading" secondItem="axe-E2-d4K" secondAttribute="leadingMargin" id="1Zt-mI-jOQ"/>
+                                                <constraint firstItem="gTA-ee-xcn" firstAttribute="trailing" secondItem="axe-E2-d4K" secondAttribute="trailingMargin" id="91c-tn-nho"/>
+                                                <constraint firstItem="wIu-AS-GT2" firstAttribute="top" secondItem="Y1T-QR-EC8" secondAttribute="bottom" constant="8" symbolic="YES" id="AxW-8h-cVF"/>
+                                                <constraint firstItem="wIu-AS-GT2" firstAttribute="top" secondItem="Y1T-QR-EC8" secondAttribute="bottom" constant="8" symbolic="YES" id="Od2-Nf-Cgl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y1T-QR-EC8" secondAttribute="trailing" id="RwE-nu-hEY"/>
+                                                <constraint firstItem="Y1T-QR-EC8" firstAttribute="leading" secondItem="axe-E2-d4K" secondAttribute="leadingMargin" id="UwY-4D-ryJ"/>
+                                                <constraint firstItem="gTA-ee-xcn" firstAttribute="leading" secondItem="wIu-AS-GT2" secondAttribute="trailing" constant="226" id="ZzQ-21-e4K"/>
+                                                <constraint firstItem="Tz1-PR-5b7" firstAttribute="top" secondItem="wIu-AS-GT2" secondAttribute="bottom" constant="13" id="bj9-BN-0I5"/>
+                                                <constraint firstItem="Tz1-PR-5b7" firstAttribute="top" secondItem="gTA-ee-xcn" secondAttribute="bottom" constant="13" id="hTJ-2j-bMP"/>
+                                                <constraint firstItem="gTA-ee-xcn" firstAttribute="leading" secondItem="wIu-AS-GT2" secondAttribute="trailing" constant="226" id="jFR-Bb-HEj"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tz1-PR-5b7" secondAttribute="bottom" id="kap-mm-795"/>
+                                                <constraint firstItem="gTA-ee-xcn" firstAttribute="top" secondItem="axe-E2-d4K" secondAttribute="topMargin" constant="32" id="phP-k6-mqW"/>
+                                                <constraint firstItem="wIu-AS-GT2" firstAttribute="leading" secondItem="axe-E2-d4K" secondAttribute="leadingMargin" id="sQH-hj-SOv"/>
+                                                <constraint firstItem="Tz1-PR-5b7" firstAttribute="trailing" secondItem="axe-E2-d4K" secondAttribute="trailingMargin" id="uYG-7t-oOg"/>
+                                                <constraint firstItem="Y1T-QR-EC8" firstAttribute="top" secondItem="axe-E2-d4K" secondAttribute="topMargin" id="vVa-jd-GD4"/>
+                                                <constraint firstItem="Tz1-PR-5b7" firstAttribute="top" secondItem="gTA-ee-xcn" secondAttribute="bottom" constant="13" id="zw2-cw-gT3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ageLabel" destination="gTA-ee-xcn" id="MKw-i9-wyc"/>
+                                            <outlet property="descriptionLabel" destination="Tz1-PR-5b7" id="vU1-nh-LR4"/>
+                                            <outlet property="nameLabel" destination="Y1T-QR-EC8" id="EfR-39-NMr"/>
+                                            <outlet property="typeLabel" destination="wIu-AS-GT2" id="4kg-Mb-c23"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tn5-MX-HUo">
+                                <rect key="frame" x="100" y="101" width="193" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="plus.app" catalog="system" title=" Добавить питомца">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addPetTapped:" destination="EGN-Ps-Sev" eventType="touchUpInside" id="yll-C9-Rgj"/>
-                                    <segue destination="QHD-qS-N7W" kind="presentation" id="e0o-cI-TvQ"/>
+                                    <segue destination="QHD-qS-N7W" kind="presentation" id="0b7-75-tgC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N02-E1-y5v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Питомцы" image="pawprint" catalog="system" id="ChV-SU-ekr"/>
+                    <tabBarItem key="tabBarItem" title="Питомцы" id="ChV-SU-ekr">
+                        <imageReference key="image" image="pawprint" catalog="system" symbolScale="default" variableValue="0.80000000000000004"/>
+                        <color key="badgeColor" systemColor="systemMintColor"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="petsTableView" destination="gNB-Iy-tIw" id="nui-fp-r1y"/>
+                        <segue destination="NPV-eD-NYw" kind="show" identifier="ShowPetTasks" id="BzZ-Jr-wMY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4y-qg-zke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +474,7 @@
                                 <rect key="frame" x="58" y="416" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBd-tn-PNB">
                                 <rect key="frame" x="58" y="390" width="75" height="18"/>
@@ -281,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ni-CL-rIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3849.6183206106871" y="-297.18309859154931"/>
+            <point key="canvasLocation" x="3955" y="-297"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pPL-aw-eS7">
@@ -395,6 +622,12 @@
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

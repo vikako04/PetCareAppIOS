@@ -8,6 +8,7 @@
 import UIKit
 
 class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+    
 
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -62,5 +63,32 @@ class AddPetViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     
     @IBAction func addPetTapped(_ sender: UIButton) {
-    }
+            guard
+                let name = nameTextField.text, !name.isEmpty,
+                let ageText = ageTextField.text, let age = Int(ageText),
+                let description = descriptionTextField.text,
+                let type = selectedType
+            else {
+                print("Заполните все поля корректно")
+                return
+            }
+
+            PetsNetworkManager.shared.addPet(name: name, type: type, age: age, description: description) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let pet):
+                                    print("Питомец добавлен: \(pet.name)")
+                                    
+                                    self.dismiss(animated: true) {
+                                        if let petsVC = self.presentingViewController as? PetsViewController {
+                                            petsVC.fetchPets()
+                                        }
+                                    }
+                    case .failure(let error):
+                        print("Ошибка при добавлении: \(error.localizedDescription)")
+                    }
+                }
+                
+            }
+        }
 }
