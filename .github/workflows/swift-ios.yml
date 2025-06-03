@@ -1,0 +1,27 @@
+name: iOS CI (Swift)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_15.2.app # обнови при необходимости
+
+    - name: Build and test
+      run: |
+        xcodebuild test \
+          -project PerCareApp.xcodeproj \
+          -scheme PerCareApp \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
+          clean build | xcpretty
