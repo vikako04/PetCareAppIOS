@@ -10,6 +10,6 @@ struct Task: Codable {
     let title: String
     let description: String
     let dueDate: String
-    let isCompleted: Bool
+    var isCompleted: Bool
     let pet: String
 }
