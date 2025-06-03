@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class PetsNetworkManager {
+class PetsNetworkManager: PetsNetworkProtocol {
     static let shared = PetsNetworkManager()
     private init() {}
 

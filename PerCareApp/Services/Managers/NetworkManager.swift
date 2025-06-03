@@ -15,7 +15,7 @@ struct AuthResponse: Codable {
     let refreshToken: String
 }
 
-class NetworkManager {
+class NetworkManager: NetworkProtocol {
     static let shared = NetworkManager()
     private init() {}
 

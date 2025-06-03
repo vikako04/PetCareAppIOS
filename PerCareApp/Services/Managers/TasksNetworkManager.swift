@@ -8,7 +8,7 @@
 import Foundation
 
 
-class TasksNetworkManager {
+class TasksNetworkManager: TasksNetworkProtocol {
     static let shared = TasksNetworkManager()
     private init() {}
     
